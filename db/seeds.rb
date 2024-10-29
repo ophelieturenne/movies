@@ -1,11 +1,14 @@
-# Create Directors
-director_james = Director.create(name: 'Smith')
-director_john = Director.create(name: 'John')
+Director.destroy_all
+Genre.destroy_all
+Movie.destroy_all
 
-# Create Genres
-genre_one = Genre.create(name: 'Romantique')
-genre_two = Genre.create(name: 'Fantastique')
+director1 = Director.create!(name: 'Francis Ford Coppola')
+director2 = Director.create!(name: 'Frank Darabont')
 
-# Create Movies
-Movie.create(title: 'Avatar', release_date: '2009-12-18', director: director_james, genre: genre_one)
-Movie.create(title: 'Pak', release_date: '2009-12-19', director: director_john, genre: genre_two)
+genre1 = Genre.create!(name: 'Crime')
+genre2 = Genre.create!(name: 'Drama')
+
+Movie.create!(title: 'The Godfather', release_date: '1972-03-24', director: director1, genre: genre1)
+Movie.create!(title: 'The Green Mile', release_date: '1999-12-10', director: director2, genre: genre2)
+
+puts 'Seed data created!'
