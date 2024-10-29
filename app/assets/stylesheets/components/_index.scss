@@ -3,3 +3,42 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+@import "banner";
+
+// Example custom styles
+body {
+  font-family: 'Helvetica', sans-serif;
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-title {
+    font-weight: bold;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .btn-warning {
+    background-color: #f0ad4e;
+    border: none;
+  }
+
+  .btn-danger {
+    background-color: #d9534f;
+    border: none;
+  }
+}

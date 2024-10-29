@@ -1,0 +1,31 @@
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <!-- Movie Poster/Image from Unsplash -->
+    <div class="col-md-4">
+      <img src="https://source.unsplash.com/featured/?movie,cinema" class="img-fluid rounded-start" alt="<%= movie.title %> poster">
+    </div>
+
+    <!-- Movie Details -->
+    <div class="col-md-8">
+      <div class="card-body">
+        <!-- Movie Title -->
+        <h5 class="card-title mb-1"><%= movie.title %> (<%= movie.release_date.year %>)</h5>
+
+        <!-- Director and Genre -->
+        <p class="card-text mb-2">
+          <small class="text-muted">Directed by: <%= movie.director.name %></small><br>
+          <small class="text-muted">Genre: <%= movie.genre.name %></small>
+        </p>
+
+        <!-- Placeholder Description -->
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+
+        <!-- Edit & Delete Buttons -->
+        <div class="d-flex justify-content-between align-items-center mt-3">
+          <a href="<%= edit_movie_path(movie) %>" class="btn btn-sm btn-warning">Edit</a>
+          <%= link_to 'Delete', movie, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
