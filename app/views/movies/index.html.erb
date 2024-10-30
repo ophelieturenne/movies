@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <h1 class="mb-4">Movie List</h1>
+  <%= link_to 'Add New Movie', new_movie_path, class: 'btn btn-primary mb-3' %>
+
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= movie.title %> (<%= movie.release_date.year %>)</h5>
+            <p class="card-text">Directed by: <%= movie.director.name %></p>
+            <p class="card-text">Genre: <%= movie.genre.name %></p>
+            <%= link_to 'Edit', edit_movie_path(movie), class: 'btn btn-warning' %>
+            <%= link_to 'Delete', movie_path(movie), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
